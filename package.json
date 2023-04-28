@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/juliaghany/project-2/issues"
   },
-  "homepage": "https://github.com/juliaghany/project-2#readme"
+  "homepage": "https://github.com/juliaghany/project-2#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express-handlebars": "^7.0.7",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.2.4",
+    "sequelize": "^6.31.0"
+  }
 }
