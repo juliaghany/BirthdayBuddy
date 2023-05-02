@@ -41,3 +41,5 @@ Gift.init(
         modelName: 'gift'
     }
 );
+
+module.exports = Gift;
