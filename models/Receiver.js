@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
-const Gift = require('./Gift');
+// const Gift = require('./Gift');
 
 // initialize Receiver model
 class Receiver extends Model { }
@@ -22,20 +22,20 @@ Receiver.init(
             type: DataTypes.DATE,
             allowNull: false,
         },
-        gift_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: Gift,
-                key: 'id'
-            }
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: User,
-                key: 'id'
-            }
-        }
+        // gift_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: Gift,
+        //         key: 'id'
+        //     }
+        // },
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: User,
+        //         key: 'id'
+        //     }
+        // }
     },
     {
         sequelize,

@@ -1,7 +1,7 @@
 // handles connection
 
 const Sequelize = require('sequelize');
-require('dotevn').config();
+require('dotenv').config();
 
 const sequelize = new Sequelize(
     process.env.DB_NAME,
