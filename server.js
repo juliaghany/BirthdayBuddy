@@ -49,6 +49,10 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const db = require("./config/connection")
 
+const express = require("express");
+const exphbs = require("express-handlebars");
+const db = require("./config/connection")
+
 const hbs = exphbs.create();
 
 const routes = require("./controllers")
@@ -72,3 +76,4 @@ db.sync({force: false})
         console.log("Server is now listening!")
     })
 })
+
