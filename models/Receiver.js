@@ -22,20 +22,13 @@ Receiver.init(
             type: DataTypes.DATE,
             allowNull: false,
         },
-        // gift_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: Gift,
-        //         key: 'id'
-        //     }
-        // },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: User,
-        //         key: 'id'
-        //     }
-        // }
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: User,
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
