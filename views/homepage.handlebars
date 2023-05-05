@@ -1,3 +1,28 @@
-{{#each people as |people|}}
-{{> people-details}}
-{{/each}}
+<hr />
+<h2>Add a new person</h2>
+
+<form id="new-person-form">
+    <label>Name</label>
+    <input type="text" id="name" />
+    <label>Birthday</label>
+    <input type="text" id="birth-date" />
+    <button type="submit">Save</button>
+</form>
+<hr />
+
+<h1>Homepage handlebars</h1>
+<div>
+    {{#if receivers.length}}
+    {{#each receivers as |receiver|}}
+    <a href="/{{receiver.id}}">
+        <h1>{{receiver.name}}</h1>
+    </a>
+    <p>{{format_date receiver.birth_date}}</p>
+    {{/each}}
+    {{else}}
+    <h1>No receivers to show</h1>
+
+    {{/if}}
+</div>
+
+<script src='./js/new-person-logic.js'></script>
