@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS gift_db;
+DROP DATABASE IF EXISTS birthday_db;
 
-CREATE DATABASE gift_db;
+CREATE DATABASE birthday_db;

@@ -1,5 +1,4 @@
-// auth.js file
-// Module 14 Activity 23
+// borrowed code from Module 14 Activity 23
 
 const withAuth = (req, res, next) => {
     if (!req.session.logged_in) {
