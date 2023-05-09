@@ -6,4 +6,5 @@ const receiverRoutes = require('./receiver-routes');
 router.use('/users', userRoutes);
 router.use('/receivers', receiverRoutes);
 
+
 module.exports = router;

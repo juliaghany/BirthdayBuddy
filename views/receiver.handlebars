@@ -1,0 +1,25 @@
+<h1>Gift List</h1>
+
+<h2>Add an gift to the list</h2>
+<form id="gift-form">
+    <input type="hidden" name="receiver_id" value="{{receiver.id}}">
+    <label>Enter gift:</label>
+    <input type="text" id="gift-input" />
+    <button type="submit">Add Gift</button>
+</form>
+<hr />
+
+<ul id="gift-list">
+    {{#each gifts}}
+    <li data-id="{{this.id}}">
+        {{this.description}}
+        <button class="btn btn-danger delete-gift">Remove</button>
+    </li>
+    {{/each}}
+</ul>
+
+<script>
+    const receiver_id = {{receiver.id}};
+</script>
+<script src="/js/create-gift.js"></script>
+{{!-- <script src="/js/gift.js"></script> --}}
