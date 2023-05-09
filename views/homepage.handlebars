@@ -14,7 +14,7 @@
 <div>
     {{#if receivers.length}}
     {{#each receivers as |receiver|}}
-    <a href="/{{receiver.id}}">
+    <a href="/receivers/{{receiver.id}}">
         <h1>{{receiver.name}}</h1>
     </a>
     <p>{{format_date receiver.birth_date}}</p>
