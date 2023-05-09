@@ -1,8 +1,8 @@
-//code borrow from lesson 5 activity 10
-var giftFormEl = $('#gift-form');
-var giftListEl = $('#gift-list');
 
-function handleFormSubmit(event) {
+
+giftListEl.on('click', '.delete-item-btn', handleRemoveItem);
+giftFormEl.on('submit', handleFormSubmit);
+
   event.preventDefault();
 
   var giftItem = $('input[name="gift-input"]').val();
