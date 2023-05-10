@@ -6,7 +6,7 @@ const { Receiver, Gift, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         if (!req.session.logged_in) {
            return res.redirect('/login')
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/receivers/:id', async (req, res) => {
+router.get('/receivers/:id', withAuth, async (req, res) => {
     try {
         const receiverData = await Receiver.findByPk(req.params.id, {
             attributes: [

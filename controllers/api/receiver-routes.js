@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Receiver, Gift } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // CREATE new receiver
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     console.log("i'm working!!")
     try {
         const newReceiver = await Receiver.create({
@@ -19,7 +20,7 @@ router.post('/', async (req, res) => {
 });
 
 // GET one receiver by ID
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const receiverData = await Receiver.findByPk(req.params.id, {
             attributes: [
