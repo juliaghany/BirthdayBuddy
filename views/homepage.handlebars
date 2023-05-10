@@ -1,28 +1,40 @@
 <hr />
-<h2>Add a new person</h2>
-
-<form id="new-person-form">
-    <label>Name</label>
-    <input type="text" id="name" />
-    <label>Birthday</label>
-    <input type="text" id="birth-date" />
-    <button type="submit">Save</button>
-</form>
-<hr />
-
-<h1>Homepage handlebars</h1>
-<div>
-    {{#if receivers.length}}
-    {{#each receivers as |receiver|}}
-    <a href="/receivers/{{receiver.id}}">
-        <h1>{{receiver.name}}</h1>
-    </a>
-    <p>{{format_date receiver.birth_date}}</p>
-    {{/each}}
-    {{else}}
-    <h1>No receivers to show</h1>
-
-    {{/if}}
+<div class="card">
+    <div class="card-header">
+        Add new person:
+    </div>
+    <div class="card-body">
+        <form id="new-person-form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Birthday</label>
+                    <input type="text" class="form-control" id="birth-date" />
+                </div>
+            </div>
+            <button class="btn save-btn" type="submit">Save</button>
+        </form>
+    </div>
 </div>
+<hr />
+        {{#if receivers.length}}
+        <div class="card-deck receiver-card">
+            {{#each receivers as |receiver|}}
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title receiver-name">{{receiver.name}}</h3>
+                    <p class="card-text">{{format_date receiver.birth_date}}</p>
+                    <a href="/receivers/{{receiver.id}}">View {{receiver.name}}'s gift list</a>
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <h1>No birthday gift lists just yet, add a new receiver above!</h1>
 
-<script src='./js/new-person-logic.js'></script>
+            {{/if}}
+        </div>
+
+        <script src='./js/new-person-logic.js'></script>

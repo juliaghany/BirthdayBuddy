@@ -37,6 +37,28 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/receivers/:id', async (req, res) => {
+    try {
+        const receiverData = await Receiver.findByPk(req.params.id, {
+            attributes: [
+                'id',
+                'name',
+                'birth_date'
+            ],
+            include: [
+               { model: Gift}
+            ]
+        });
+
+        const receiver = receiverData.get({ plain: true });
+        console.log(receiver)
+        res.render('receiver', { receiver, logged_in: req.session.logged_in });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 // login route
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

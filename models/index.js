@@ -14,4 +14,4 @@ User.hasMany(Receiver, { foreignKey: "user_id", onDelete: 'CASCADE' });
 // Receiver belongs to user
 Receiver.belongsTo(User, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 
-module.exports = { User, Receiver }
+module.exports = { User, Receiver, Gift }
