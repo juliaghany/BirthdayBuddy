@@ -1,47 +1,42 @@
 const giftForm = document.querySelector('#gift-form');
 const giftInput = document.querySelector('#gift-input');
 const giftList = document.querySelector('#gift-list');
-let receiverId = window.location.pathname.split("/").pop();
+const receiver_id = window.location.pathname.split("/").pop();
 
 giftForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const description = giftInput.value;
 
-    const response = await fetch(`/api/receivers/${receiverId}/gifts`, {
+    const response = await fetch(`/api/gifts`, {
         method: 'POST',
-        body: JSON.stringify({ description }),
+        body: JSON.stringify({ description, receiver_id }),
         headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
         const gift = await response.json();
-        giftList.insertAdjacentHTML('beforeend', `<li>${gift.description}</li>`);
+        giftList.insertAdjacentHTML('beforeend', `<li class="list-group-item list-item" data-id="${gift.id}"><button class="delete-gift delete-btn delete is-large"></button> ${gift.description} </li>`);
         giftInput.value = '';
-    } else {
-        alert('Failed to post gift')
-    }
 
-    window.location.href = `/receivers/${receiverId}`
+    }
 });
 
-const deleteBtns = document.querySelectorAll('.delete-btn');
-
-deleteBtns.forEach((button) => {
-    button.addEventListener('click', async (event) => {
+giftList.addEventListener('click', async (event) => {
+    if (event.target.classList.contains('delete-gift')) {
         event.preventDefault();
 
-        const giftId = button.getAttribute('data-id');
+        const button = event.target;
+        const li = button.parentNode;
+        const giftId = li.getAttribute('data-id');
 
         try {
-            console.log(receiverId);
-            console.log(giftId);
-            const response = await fetch(`/api/receivers/${receiverId}/gifts/${giftId}`, {
+            const response = await fetch(`/api/gifts/${giftId}`, {
                 method: 'DELETE',
             });
 
             if (response.ok) {
-                button.parentNode.remove();
+                li.remove();
             } else {
                 console.log('Failed to delete gift');
             }
@@ -49,5 +44,6 @@ deleteBtns.forEach((button) => {
             console.log(err);
             alert('Failed to delete gift');
         }
-    });
+    }
 });
+

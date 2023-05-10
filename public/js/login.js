@@ -1,5 +1,5 @@
 // refer to Module 14 Activity 17 public -> js -> login.js
-console.log("file linked")
+// handles login
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -20,7 +20,7 @@ const loginFormHandler = async (event) => {
         }
     }
 };
-
+// handles signup 
 const signupFormHandler = async (event) => {
     event.preventDefault();
     console.log("signing up")
