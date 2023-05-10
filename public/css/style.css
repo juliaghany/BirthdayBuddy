@@ -14,11 +14,6 @@ header h1 {
     font-size: 70px;
 }
 
-.signup-login {
-    font-family: 'Mukta', sans-serif;
-    font-weight: 575;
-}
-
 header a {
     color: black;
     font-weight: bold;
@@ -43,7 +38,8 @@ figure {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 10px solid pink;
+    border-top: 10px solid pink;
+    border-bottom: 10px solid pink;
 }
 
 .logout-btn {
@@ -68,11 +64,9 @@ figure {
     font-weight: 600;
 }
 
-label {
-    padding: 8px;
-    font-size: 25px;
+.signup-login {
     font-family: 'Mukta', sans-serif;
-    font-weight: 600;
+    font-weight: 575;
 }
 
 .signup-form {
@@ -87,6 +81,13 @@ label {
     background-image: url('https://backdropscanada.ca/wp-content/uploads/2018/02/Birthday-Confetti-Unicorn-768x584.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+label {
+    padding: 8px;
+    font-size: 25px;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 600;
 }
 
 .receiver-name {
