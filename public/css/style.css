@@ -113,6 +113,10 @@ label {
     margin-top: 10px;
 }
 
+.add-btn {
+    margin-top: 6px;
+}
+
 .delete-btn {
     margin-left: 10px;
     height: 1.5rem;
