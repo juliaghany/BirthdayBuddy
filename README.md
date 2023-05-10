@@ -12,6 +12,8 @@ BirthdayBuddy is an application that allows users/clients to create a list that 
 - [User Story](#user-story)<br>
 - [Acceptance Criteria](#acceptance-criteria)<br>
 - [Usage](#usage)<br>
+- [Application Link](#application-link)<br>
+- [Screenshot](#screenshot)<br>
 - [License](#license)<br>
 - [Credits](#credits)<br>
 
@@ -40,6 +42,13 @@ How many times have you gotten a gift for someone, that ends up being the same g
 
 To use this application, you will need to go onto the site page. You'll be then asked to create an account if you are a new user. After logging in after making an account, you are then able to create a new person you want to start a gift list for. Once the new person is created, you will have access to add gifts that you would like to get for the person in the future.
 
+## Application Link
+https://birthday-buddy.herokuapp.com/
+
+## Screenshot
+
+Screenshot of BirthdayBuddy
+![Alt text](assets/images/Screenshot%202023-05-10%20184303.png)
 ## License
 
 This application is covered under the [MIT License](https://opensource.org/license/mit/).
